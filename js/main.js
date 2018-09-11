@@ -142,24 +142,24 @@
     /* 谢谢观看 */
     `;
 
-    var speed = 40;
+    var speed = 20;
     var starN = 0;
     writecode(code, speed);
 
     lowSpeedBtn.onclick = function () {
-        speed = 100;
+        speed = 50;
         window.clearInterval(writeCodeSit);
 
         writecode(code, speed);
     }
     midSpeedBtn.onclick = function () {
-        speed = 40;
+        speed = 20;
         window.clearInterval(writeCodeSit);
 
         writecode(code, speed);
     }
     fastSpeedBtn.onclick = function () {
-        speed = 10;
+        speed = 5;
         window.clearInterval(writeCodeSit);
 
         writecode(code, speed);
