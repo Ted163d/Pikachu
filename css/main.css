@@ -52,9 +52,16 @@ body {
 
 /* 速度按钮 */
 .actions{
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    right:100px;
-    top: 100px;
-    border:1px solid red;
+    right:30px;
+    top: 30px;
+
+
+}
+.actions >a {
+    margin-top: 10px;
+    padding:0 20px;
 }
 

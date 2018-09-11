@@ -142,7 +142,7 @@
     /* 谢谢观看 */
     `;
 
-    var speed = 100;
+    var speed = 40;
     var starN = 0;
     writecode(code, speed);
 
