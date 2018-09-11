@@ -1,6 +1,12 @@
-!function(){
+! function () {
     var code = `
     /* 下面我用CSS代码画一个皮卡丘 */
+
+    /* 皮肤 */
+    .preview {
+        background: #FFE600;
+    }
+
     /* 鼻子 */
     .nose {
         width: 0;
@@ -135,24 +141,49 @@
     }
     /* 谢谢观看 */
     `;
-    writecode(code);
 
-    function writecode(codeStr){
+    var speed = 100;
+    var starN = 0;
+    writecode(code, speed);
+
+    lowSpeedBtn.onclick = function () {
+        speed = 100;
+        window.clearInterval(writeCodeSit);
+
+        writecode(code, speed);
+    }
+    midSpeedBtn.onclick = function () {
+        speed = 40;
+        window.clearInterval(writeCodeSit);
+
+        writecode(code, speed);
+    }
+    fastSpeedBtn.onclick = function () {
+        speed = 10;
+        window.clearInterval(writeCodeSit);
+
+        writecode(code, speed);
+    }
+
+
+    function writecode(codeStr, speed) {
         var styleTag = document.querySelector(".styleTag")
         var code = document.querySelector('#code')
-        var n = 1;
-        
-        var id = setInterval(() => {
+        var n = starN;
 
-            var strsub = codeStr.substring(0,n);
-            styleTag.innerHTML = strsub;
-            code.innerHTML = strsub;
+        window.writeCodeSit = setInterval(() => {
+
+            var strsub = codeStr.substring(n, n + 1);
+            styleTag.innerHTML += strsub;
+            code.innerHTML += strsub;
 
             code.scrollTop = code.scrollHeight;
             n++;
-            if(n >= codeStr.length){
-               window.clearInterval(id);
+            starN = n;
+
+            if (n >= codeStr.length) {
+                window.clearInterval(writeCodeSit);
             }
-        }, 0);
+        }, speed);
     };
 }();

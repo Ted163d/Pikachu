@@ -17,8 +17,6 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-
-
 }
 
 .code-wrapper {
@@ -43,12 +41,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #FFE600;
+
 }
 
 .wrapper {
     width: 100%;
     height: 200px;
     position: relative;
+}
+
+/* 速度按钮 */
+.actions{
+    position: fixed;
+    right:100px;
+    top: 100px;
+    border:1px solid red;
 }
 
