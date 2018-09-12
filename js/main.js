@@ -1,7 +1,33 @@
 ! function () {
+    
     var code = `
     /* 下面我用CSS代码画一个皮卡丘 */
 
+    /* 背景太单调了,加个背景颜色 */
+    .code {
+        background-color: #23241f;
+    }
+    
+    /* 字体太难看了,改变一下代码的字体并高亮代码 */
+    #code {
+        font-family: Consolas, 
+        "Courier New";
+        font-size: 13px;
+    }
+    .token.function {
+        color: #61cbff;
+    }
+    .token.selector {
+        color: #f92672;
+    }
+    .token.punctuation {
+        color: #c999ce;
+    }
+    .token.property {
+        color: #a6e22e;
+    }
+
+    /* 接下来开始画皮卡丘 */
     /* 皮肤 */
     .preview {
         background: #FFE600;
@@ -173,10 +199,14 @@
 
         window.writeCodeSit = setInterval(() => {
 
-            var strsub = codeStr.substring(n, n + 1);
-            styleTag.innerHTML += strsub;
-            code.innerHTML += strsub;
+            var strsub = codeStr.substring(0, n);
+            styleTag.innerHTML = strsub;
 
+            var hightLightCssStr = Prism.highlight(strsub, Prism.languages.css, 'css'); //使用Prism库
+            code.innerHTML = hightLightCssStr;
+           
+            // console.log(hightLightCssStr);
+            // code.innerHTML = hightLightCssStr;
             code.scrollTop = code.scrollHeight;
             n++;
             starN = n;

@@ -29,6 +29,7 @@ body {
     overflow: auto;
     /* 带滚动条的overflow */
     height: 100%;
+    color:white;
 }
 
 .preview-wrapper {
