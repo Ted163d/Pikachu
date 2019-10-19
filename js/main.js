@@ -155,7 +155,7 @@
     
     .lowerLip::after {
         content: '';
-        display: block;
+        display: none;
         width: 150px;
         height: 150px;
         background: #fc4a62;
